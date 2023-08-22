@@ -19,11 +19,12 @@ class Navegador:
         self.ingresar_url(self.web)
 
     def ingresar_url(self,url):
+        self.web = url
         self.driver.get(url)
 
     def buscar_elemento(self,xpath):
         return self.driver.find_element('xpath',xpath)
     
-    def presionar_tecla(self,elemento,tecla):
-        return elemento.send_keys(Keys.tecla)
+    def presionar_enter(self,elemento):
+        return elemento.send_keys(Keys.ENTER)
 
