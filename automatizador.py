@@ -25,6 +25,12 @@ class Navegador:
     def buscar_elemento(self,xpath):
         return self.driver.find_element('xpath',xpath)
     
+    def ingresar_objeto_en_elemento(self,objeto,elemento):
+        return elemento.send_keys(objeto)
+    
+    def click_objeto(self,xpath):
+        self.driver.buscar_elemento(xpath).click()
+    
     def presionar_enter(self,elemento):
         return elemento.send_keys(Keys.ENTER)
 
